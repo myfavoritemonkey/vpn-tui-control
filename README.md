@@ -19,6 +19,20 @@ ln -sf vpn-tui-control ~/.local/bin/vtc
 
 После этого доступны команды `vpn-tui-control` и `vtc`.
 
+Чтобы команды находились и через `sudo`, установите их в системный `PATH`:
+
+```bash
+sudo install -m 755 ~/.local/bin/vpn-tui-control /usr/local/bin/vpn-tui-control
+sudo ln -sf vpn-tui-control /usr/local/bin/vtc
+```
+
+После этого будут работать:
+
+```bash
+sudo vpn-tui-control
+sudo vtc status
+```
+
 Конфигурация по умолчанию сохраняется в `/etc/sing-box/config.json`, а ссылка — в `/etc/sing-box/subscription.url`. При следующем запуске достаточно нажать Enter на приглашении ссылки, чтобы использовать сохранённую подписку. Для теста без root можно указать другой путь:
 
 ```bash
