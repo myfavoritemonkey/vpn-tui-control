@@ -9,6 +9,16 @@ cargo build --release
 sudo ./target/release/vpn-tui-control
 ```
 
+Установка команд для запуска из любой директории:
+
+```bash
+mkdir -p ~/.local/bin
+install -m 755 target/release/vpn-tui-control ~/.local/bin/vpn-tui-control
+ln -sf vpn-tui-control ~/.local/bin/vtc
+```
+
+После этого доступны команды `vpn-tui-control` и `vtc`.
+
 Конфигурация по умолчанию сохраняется в `/etc/sing-box/config.json`, а ссылка — в `/etc/sing-box/subscription.url`. При следующем запуске достаточно нажать Enter на приглашении ссылки, чтобы использовать сохранённую подписку. Для теста без root можно указать другой путь:
 
 ```bash
